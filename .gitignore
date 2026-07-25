@@ -2,3 +2,12 @@ out
 .env
 learn-cicd-starter
 notely
+
+# /teach workspace
+MISSION.md
+RESOURCES.md
+NOTES.md
+lessons/
+assets/
+learning-records/
+reference/
