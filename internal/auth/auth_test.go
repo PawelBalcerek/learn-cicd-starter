@@ -57,20 +57,20 @@ func TestGetAPIKey(t *testing.T) {
 		},
 	}
 
-	for _, tc := range tests {
-		t.Run(tc.name, func(t *testing.T) {
-			got, err := auth.GetAPIKey(tc.headers)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := auth.GetAPIKey(tt.headers)
 
-			if tc.wantErr != nil {
-				if err != tc.wantErr {
-					t.Errorf("GetAPIKey() error = %v, wantErr %v", err, tc.wantErr)
+			if tt.wantErr != nil {
+				if err != tt.wantErr {
+					t.Errorf("GetAPIKey() error = %v, wantErr %v", err, tt.wantErr)
 				}
 				return
 			}
 
-			if tc.wantErrStr != "" {
-				if err == nil || err.Error() != tc.wantErrStr {
-					t.Errorf("GetAPIKey() error = %v, wantErrStr %q", err, tc.wantErrStr)
+			if tt.wantErrStr != "" {
+				if err == nil || err.Error() != tt.wantErrStr {
+					t.Errorf("GetAPIKey() error = %v, wantErrStr %q", err, tt.wantErrStr)
 				}
 				return
 			}
@@ -78,8 +78,8 @@ func TestGetAPIKey(t *testing.T) {
 			if err != nil {
 				t.Fatalf("GetAPIKey() unexpected error: %v", err)
 			}
-			if got != tc.wantKey {
-				t.Errorf("GetAPIKey() = %q, want %q", got, tc.wantKey)
+			if got != tt.wantKey {
+				t.Errorf("GetAPIKey() = %q, want %q", got, tt.wantKey)
 			}
 		})
 	}
