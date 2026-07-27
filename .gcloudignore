@@ -3,6 +3,7 @@
 .gitignore
 .gcloudignore
 .github/
+cloudbuild.yaml
 
 # Ignore local environment and secret files
 .env
