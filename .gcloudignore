@@ -1,1 +1,19 @@
-!notely
+# Ignore version control and CI/CD configs
+.git/
+.gitignore
+.gcloudignore
+.github/
+
+# Ignore local environment and secret files
+.env
+*.env
+
+# Ignore local dev tools, tests, and documentation
+sql/
+sqlc.yaml
+scripts/
+README.md
+*_test.go
+
+# Inherit any additional rules from .gitignore
+#!include:.gitignore
