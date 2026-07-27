@@ -1,3 +1,5 @@
+!notely
+
 # Ignore version control and CI/CD configs
 .git/
 .gitignore
