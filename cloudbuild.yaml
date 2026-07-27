@@ -1,0 +1,12 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -t
+      - us-central1-docker.pkg.dev/notely-503714/notely-ar-repo/notely:$COMMIT_SHA
+      - -t
+      - us-central1-docker.pkg.dev/notely-503714/notely-ar-repo/notely:latest
+      - .
+images:
+  - us-central1-docker.pkg.dev/notely-503714/notely-ar-repo/notely:$COMMIT_SHA
+  - us-central1-docker.pkg.dev/notely-503714/notely-ar-repo/notely:latest
