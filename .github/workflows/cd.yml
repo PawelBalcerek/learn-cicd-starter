@@ -24,4 +24,5 @@ jobs:
 
       - uses: google-github-actions/setup-gcloud@v3
 
-      - run: gcloud builds submit --substitutions=COMMIT_SHA=${{ github.sha }} .
+      - name: Build and deploy
+        run: gcloud builds submit --substitutions=COMMIT_SHA=${{ github.sha }} .
