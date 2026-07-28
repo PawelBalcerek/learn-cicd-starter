@@ -24,5 +24,11 @@ jobs:
 
       - uses: google-github-actions/setup-gcloud@v3
 
-      - name: Build and deploy
-        run: gcloud builds submit --substitutions=COMMIT_SHA=${{ github.sha }} .
+      - run: gcloud builds submit --substitutions=COMMIT_SHA=${{ github.sha }} .
+
+      - uses: google-github-actions/deploy-cloudrun@v2
+        with:
+          service: notely
+          image: us-central1-docker.pkg.dev/notely-503714/notely-ar-repo/notely:${{ github.sha }}
+          region: us-central1
+          flags: --allow-unauthenticated --max-instances=4

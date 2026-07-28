@@ -8,17 +8,6 @@ steps:
       - us-central1-docker.pkg.dev/notely-503714/notely-ar-repo/notely:latest
       - .
 
-  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
-    entrypoint: gcloud
-    args:
-      - run
-      - deploy
-      - notely
-      - --image=us-central1-docker.pkg.dev/notely-503714/notely-ar-repo/notely:$COMMIT_SHA
-      - --region=us-central1
-      - --allow-unauthenticated
-      - --max-instances=4
-
 images:
   - us-central1-docker.pkg.dev/notely-503714/notely-ar-repo/notely:$COMMIT_SHA
   - us-central1-docker.pkg.dev/notely-503714/notely-ar-repo/notely:latest
